@@ -8,12 +8,14 @@ public final class Pizza implements IPizza {
     Double price;
     IDough dough;
     IBaker baker;
+    IPriceCalculator priceCalculator;
     List<IIngredient> ingredients;
 
-    public Pizza(IDough dough, IBaker baker, List<IIngredient> ingredients) {
+    public Pizza(IDough dough, IBaker baker, IPriceCalculator priceCalculator, List<IIngredient> ingredients) {
         this.price = 5.0;
         this.dough = dough;
         this.baker = baker;
+        this.priceCalculator = priceCalculator;
         this.ingredients = ingredients;
     }
 
@@ -43,11 +45,6 @@ public final class Pizza implements IPizza {
 
     @Override
     public Double getPrice() {
-        Double totalPrice = price;
-        for (IIngredient ingredient : ingredients) {
-            Double ingredientPrice = ingredient.getPrice();
-            totalPrice += ingredientPrice;
-        }
-        return totalPrice;
+        return priceCalculator.calculate(price, ingredients);
     }
 }

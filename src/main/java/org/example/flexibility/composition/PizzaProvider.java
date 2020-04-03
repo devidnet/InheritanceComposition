@@ -8,8 +8,9 @@ public class PizzaProvider {
     public IPizza getHawaian() {
         IDough dough = new Dough();
         IBaker baker = new Baker();
+        IPriceCalculator priceCalculator = new PriceCalculator();
         List<IIngredient> ingredients = getHawaianIngredients();
-        IPizza pizza = new Pizza(dough, baker, ingredients);
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
 
         return pizza;
     }
@@ -17,8 +18,9 @@ public class PizzaProvider {
     public IPizza getHawaianMicroWave() {
         IDough dough = new Dough();
         IBaker baker = new MicroWaveBaker();
+        IPriceCalculator priceCalculator = new PriceCalculator();
         List<IIngredient> ingredients = getHawaianIngredients();
-        IPizza pizza = new Pizza(dough, baker, ingredients);
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
 
         return pizza;
     }
@@ -26,8 +28,9 @@ public class PizzaProvider {
     public IPizza getMargherita() {
         IDough dough = new Dough();
         IBaker baker = new Baker();
+        IPriceCalculator priceCalculator = new PriceCalculator();
         List<IIngredient> ingredients = getMargheritaIngredients();
-        IPizza pizza = new Pizza(dough, baker, ingredients);
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
 
         return pizza;
     }
@@ -35,8 +38,9 @@ public class PizzaProvider {
     public IPizza getMargheritaIntegral() {
         IDough dough = new IntegralDough();
         IBaker baker = new Baker();
+        IPriceCalculator priceCalculator = new PriceCalculator();
         List<IIngredient> ingredients = getMargheritaIngredients();
-        IPizza pizza = new Pizza(dough, baker, ingredients);
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
 
         return pizza;
     }
