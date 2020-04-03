@@ -44,6 +44,11 @@ public final class Pizza implements IPizza {
     }
 
     @Override
+    public IPriceCalculator getPriceCalculator() {
+        return priceCalculator;
+    }
+
+    @Override
     public Double getPrice() {
         return priceCalculator.calculate(price, ingredients);
     }

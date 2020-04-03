@@ -8,5 +8,6 @@ public interface IPizza {
     IDough getDough();
     List<IIngredient> getIngredients();
     IBaker getBaker();
+    IPriceCalculator getPriceCalculator();
     Double getPrice();
 }
