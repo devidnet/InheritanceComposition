@@ -1,9 +1,8 @@
 package org.example.flexibility.inheritance;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-class HawaianPizzaTest extends BaseTest {
+class MargheritaPizzaTest extends BaseTest {
 
     @Test
     void prepare_WhenPizzaIsRequested_PrintsMessagesCorrectly() {
@@ -11,19 +10,15 @@ class HawaianPizzaTest extends BaseTest {
         StringBuilder expectedOutput = new StringBuilder();
         expectedOutput.append("Preparing dough");
         expectedOutput.append(System.lineSeparator());
-        expectedOutput.append("Adding Cheese");
-        expectedOutput.append(System.lineSeparator());
-        expectedOutput.append("Adding Pineapple");
-        expectedOutput.append(System.lineSeparator());
-        expectedOutput.append("Adding Peach");
-        expectedOutput.append(System.lineSeparator());
         expectedOutput.append("Adding Tomato sauce");
         expectedOutput.append(System.lineSeparator());
-        expectedOutput.append("Adding Ham");
+        expectedOutput.append("Adding Cheese");
+        expectedOutput.append(System.lineSeparator());
+        expectedOutput.append("Adding Tomato");
         expectedOutput.append(System.lineSeparator());
         expectedOutput.append("Baking pizza");
         expectedOutput.append(System.lineSeparator());
-        HawaianPizza pizza = new HawaianPizza();
+        MargheritaPizza pizza = new MargheritaPizza();
 
         // Act
         pizza.prepare();
@@ -35,8 +30,8 @@ class HawaianPizzaTest extends BaseTest {
     @Test
     void getPrice_WhenPizzaPriceIsRequest_PizzaPriceIncludingIngredientsPrices() {
         // Arrange
-        double expected = 22.0;
-        HawaianPizza pizza = new HawaianPizza();
+        double expected = 17.0;
+        MargheritaPizza pizza = new MargheritaPizza();
 
         // Act
         double result = pizza.getPrice();
@@ -51,7 +46,7 @@ class HawaianPizzaTest extends BaseTest {
         StringBuilder expectedOutput = new StringBuilder();
         expectedOutput.append("Baking pizza");
         expectedOutput.append(System.lineSeparator());
-        HawaianPizza pizza = new HawaianPizza();
+        MargheritaPizza pizza = new MargheritaPizza();
 
         // Act
         pizza.bake();
@@ -66,7 +61,7 @@ class HawaianPizzaTest extends BaseTest {
         StringBuilder expectedOutput = new StringBuilder();
         expectedOutput.append("Preparing dough");
         expectedOutput.append(System.lineSeparator());
-        HawaianPizza pizza = new HawaianPizza();
+        MargheritaPizza pizza = new MargheritaPizza();
 
         // Act
         pizza.prepareDough();
