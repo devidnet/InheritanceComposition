@@ -1,7 +1,5 @@
 package org.example.flexibility.composition;
 
-import org.example.flexibility.inheritance.Ingredient;
-
 import java.util.List;
 
 public final class Pizza implements IPizza {
