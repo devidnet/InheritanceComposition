@@ -1,7 +1,7 @@
 package org.example.flexibility.inheritance;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 class HawaianPizzaTest extends BaseTest {
 
@@ -29,7 +29,7 @@ class HawaianPizzaTest extends BaseTest {
         pizza.prepare();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+        Assert.assertEquals(expectedOutput.toString(), getOutput());
     }
 
     @Test
@@ -42,7 +42,7 @@ class HawaianPizzaTest extends BaseTest {
         double result = pizza.getPrice();
 
         // Assert
-        Assertions.assertEquals(expected, result);
+        Assert.assertEquals(expected, result);
     }
 
     @Test
@@ -57,7 +57,7 @@ class HawaianPizzaTest extends BaseTest {
         pizza.bake();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+        Assert.assertEquals(expectedOutput.toString(), getOutput());
     }
 
     @Test
@@ -72,6 +72,6 @@ class HawaianPizzaTest extends BaseTest {
         pizza.prepareDough();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+        Assert.assertEquals(expectedOutput.toString(), getOutput());
     }
 }

@@ -1,19 +1,18 @@
 package org.example.flexibility.composition;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Assertions;
+public class BakerTest {
 
-class BakerTest {
-
-    @AfterEach
+    @After
     public void restoreOutput() {
         OutputConfigUtils.restoreOutput();
     }
 
     @Test
-    void bake_WhenBakePizzaIsCalled_PrintsMessageCorrectly() {
+    public void bake_WhenBakePizzaIsCalled_PrintsMessageCorrectly() {
         // Arrange
         StringBuilder expectedOutput = new StringBuilder();
         expectedOutput.append("Baking pizza");
@@ -25,6 +24,6 @@ class BakerTest {
         baker.bake();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), OutputConfigUtils.getOutput());
+        Assert.assertEquals(expectedOutput.toString(), OutputConfigUtils.getOutput());
     }
 }

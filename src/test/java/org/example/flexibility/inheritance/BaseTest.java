@@ -1,7 +1,8 @@
 package org.example.flexibility.inheritance;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+
+import org.junit.After;
+import org.junit.Before;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -15,13 +16,13 @@ public abstract class BaseTest {
         systemOut = System.out;
     }
 
-    @BeforeEach
+    @Before
     public void setUpOutput() {
         testOut = new ByteArrayOutputStream();
         System.setOut(new PrintStream(testOut));
     }
 
-    @AfterEach
+    @After
     public void restoreOutput() {
         System.setOut(systemOut);
     }

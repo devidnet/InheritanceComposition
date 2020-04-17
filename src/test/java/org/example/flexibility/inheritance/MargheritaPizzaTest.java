@@ -1,6 +1,7 @@
 package org.example.flexibility.inheritance;
 
-import org.junit.jupiter.api.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 class MargheritaPizzaTest extends BaseTest {
 
@@ -24,7 +25,7 @@ class MargheritaPizzaTest extends BaseTest {
         pizza.prepare();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+        Assert.assertEquals(expectedOutput.toString(), getOutput());
     }
 
     @Test
@@ -37,7 +38,7 @@ class MargheritaPizzaTest extends BaseTest {
         double result = pizza.getPrice();
 
         // Assert
-        Assertions.assertEquals(expected, result);
+        Assert.assertEquals(expected, result);
     }
 
     @Test
@@ -52,7 +53,7 @@ class MargheritaPizzaTest extends BaseTest {
         pizza.bake();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+        Assert.assertEquals(expectedOutput.toString(), getOutput());
     }
 
     @Test
@@ -67,6 +68,6 @@ class MargheritaPizzaTest extends BaseTest {
         pizza.prepareDough();
 
         // Assert
-        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+        Assert.assertEquals(expectedOutput.toString(), getOutput());
     }
 }

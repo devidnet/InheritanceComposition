@@ -1,19 +1,15 @@
 package org.example.flexibility.mockito;
 
-import org.example.flexibility.composition.IPriceCalculator;
-import org.example.flexibility.composition.Pizza;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import static org.mockito.Mockito.*;
 
-import org.mockito.Mock;
-import org.mockito.Spy;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 
-@ExtendWith(MockitoExtension.class)
+@RunWith(MockitoJUnitRunner.class)
 public class MockingTest {
 
     @Test
@@ -27,7 +23,7 @@ public class MockingTest {
         int result = myList.size();
 
         // Assert
-        Assertions.assertEquals(expected, result);
+        Assert.assertEquals(expected, result);
     }
 
     @Test
@@ -42,7 +38,7 @@ public class MockingTest {
         int result = myList.size();
 
         // Assert
-        Assertions.assertEquals(expected, result);
-        Assertions.assertEquals("Foo", myList.get(0));
+        Assert.assertEquals(expected, result);
+        Assert.assertEquals("Foo", myList.get(0));
     }
 }
