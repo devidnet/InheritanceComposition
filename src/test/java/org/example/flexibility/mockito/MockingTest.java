@@ -1,6 +1,9 @@
 package org.example.flexibility.mockito;
 
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
+import static org.mockito.BDDMockito.*;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,5 +43,19 @@ public class MockingTest {
         // Assert
         Assert.assertEquals(expected, result);
         Assert.assertEquals("Foo", myList.get(0));
+    }
+
+    @Test
+    public void test1_BDD() {
+        // Given - Arrange
+        ArrayList myList = mock(ArrayList.class);
+        given(myList.size()).willReturn(100);
+
+        // When - Act
+        int result = myList.size();
+
+        // Then - Assert
+        then(myList).should(only()).size();
+        assertThat(result, is(100));
     }
 }

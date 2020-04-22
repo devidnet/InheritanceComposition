@@ -64,4 +64,34 @@ public class PizzaProvider {
 
         return ingredients;
     }
+
+    public IPizza getHawaianPersonal() {
+        IDough dough = new Dough();
+        IBaker baker = new Baker();
+        IPriceCalculator priceCalculator = new PriceCalculator(PizzaSize.PERSONAL);
+        List<IIngredient> ingredients = getHawaianIngredients();
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
+
+        return pizza;
+    }
+
+    public IPizza getHawaianMedium() {
+        IDough dough = new Dough();
+        IBaker baker = new Baker();
+        IPriceCalculator priceCalculator = new PriceCalculator(PizzaSize.MEDIUM);
+        List<IIngredient> ingredients = getHawaianIngredients();
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
+
+        return pizza;
+    }
+
+    public IPizza getHawaianLarge() {
+        IDough dough = new Dough();
+        IBaker baker = new Baker();
+        IPriceCalculator priceCalculator = new PriceCalculator(PizzaSize.LARGE);
+        List<IIngredient> ingredients = getHawaianIngredients();
+        IPizza pizza = new Pizza(dough, baker, priceCalculator, ingredients);
+
+        return pizza;
+    }
 }
